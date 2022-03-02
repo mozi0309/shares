@@ -1,0 +1,42 @@
+.hover_container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+        color: #fff;
+    }
+
+    .hover_title {
+        line-height: 80px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .hover_btn_content {
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: center;
+        letter-spacing: 2px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+        text-align: center;
+        grid-gap: 1rem;
+        padding: 5rem;
+        .hover_btn {
+            // width: 300px;
+            // padding: 20px;
+            // box-sizing: border-box;
+            // margin: 30px;
+            padding: 1rem 2rem;
+            text-align: center;
+            border: none;
+            border-radius: 0px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.gradualText {
+    background-color: #ccc;
+    
+}
+.button {
+    // position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: .3s all;
+    z-index: 1;
+
+    &:hover {
+        background: #eee;
+
+        // ~ .gWrap {
+        //     // content: "";
+        //     position: fixed;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     // transition: .3s rgba(0, 0, 0, .5) linear;
+        //     // background: rgba(0, 0, 0, .5);
+        // }
+    }
+}
+
+
+p {
+    position: relative;
+    margin: 50px auto;
+    width: 500px;
+    height: 250px;
+    font-size: 22px;
+    line-height: 1.5;
+    overflow: hidden;
+    z-index: 2;
+}
+
+p .gradualTextSpan {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px) translateZ(0);
+    transition-property: transform, opacity;
+    transition-duration: 2s, .2s;
+    transition-timing-function: cubic-bezier(.23,1,.32,1), linear;
+
+}
+
+.button:hover ~ p .gradualTextSpan {
+    opacity: 1;
+    color: #ddd;
+    transform: translateY(0) translateZ(0);
+    transition-property: transform, opacity;
+    transition-duration: 2s, .2s;
+    transition-timing-function: cubic-bezier(.23,1,.32,1), linear;
+
+}
+
+p .gradualTextSpan:after,
+p .gradualTextSpan:before {
+    position: absolute;
+    content: attr(data-text);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateZ(0);
+    will-change: opacity;
+}
+
+
+p .gradualTextSpan:after {
+    color: #e62541;
+    transition-property: opacity;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(.23,1,.32,1);
+}
+
+.button:hover ~ p .gradualTextSpan:after {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.23,1,.32,1);
+}
+
+@for $i from 1 to 21 {
+    p .gradualTextSpan:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.04}s;
+        
+        &::after {
+            transition-delay: #{$i * 0.04 + 0.2}s;
+        }
+    }
+}

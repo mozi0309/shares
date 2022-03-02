@@ -1,0 +1,100 @@
+.coupon {
+    height: calc(100vh - 60px);
+    text-align: center;
+    
+    p {
+        font-size: 22px;
+        padding-top: 20px;
+    }
+
+    img {
+        width: 500px;
+        display: block;
+        margin: 20px auto;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    .coupon_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 500px;
+
+        .first {
+            .first_coupon {
+                width: 300px;
+                height: 150px;
+                margin: auto;
+                -webkit-mask: radial-gradient(circle at 0, transparent 20px, red 0), radial-gradient(circle at right, transparent 20px, blue 0);
+                -webkit-mask-size: 50%;
+                -webkit-mask-position: 0, 100%;
+                -webkit-mask-repeat: no-repeat;
+                background: linear-gradient(45deg, orange, red);
+            }
+        }
+
+        .sec {
+
+            .sec_normal {
+                .sec_coupon {
+                    width: 300px;
+                    height: 150px;
+                    margin: 20px;
+                    -webkit-mask: radial-gradient(circle at 0, transparent 20px, red 0), radial-gradient(circle at right, transparent 20px, red 0); 
+                    -webkit-mask-composite: source-in;
+                    background: linear-gradient(45deg, orange, red);
+                }
+
+            }
+            .sec_update {
+                    .sec_coupon {
+                        width: 300px;
+                        height: 150px;
+                        margin: 20px;
+                        -webkit-mask: radial-gradient(circle at 0 0, transparent 20px, red 0), radial-gradient(circle at right 0, transparent 20px, red 0), radial-gradient(circle at 0 100%, transparent 20px, red 0), radial-gradient(circle at right 100%, transparent 20px, red 0); 
+                        -webkit-mask-composite: source-in;
+                        background: linear-gradient(45deg, orange, red);
+                    }
+            }
+        }
+
+        .trd {
+
+            .trd_normal {
+                .trd_coupon {
+                    width: 300px;
+                    height: 150px;
+                    margin: 20px;
+                    -webkit-mask: radial-gradient(circle at 20px, #0000 20px, red 0); 
+                    -webkit-mask-position: -20px;
+                    background: linear-gradient(45deg, orange, red);
+                }
+
+            }
+            .trd_update {
+                    .trd_coupon {
+                        width: 300px;
+                        height: 150px;
+                        margin: 20px;
+                        -webkit-mask: radial-gradient(circle at 10px, #0000 10px, red 0); 
+                        -webkit-mask-position: -10px;
+                        -webkit-mask-size: 100% 30px;
+                        background: linear-gradient(45deg, orange, red);
+                    }
+            }
+        }
+    }
+
+    .core_code {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        img {
+            width: auto;
+            height: 240px;
+        }
+    }
+
+
+}

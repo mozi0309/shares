@@ -1,0 +1,104 @@
+.danmaku {
+    box-sizing: border-box;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    .danmakuDemo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .still {
+            width: 500px;
+            height: 400px;
+            background: url(https://assets.2dfire.com/frontend/0e898acaa1b7f58484dbc396b6c8e7ba.jpg) no-repeat;
+            background-size: 100%;
+
+            .danmakusContainer {
+                width: 100%;
+                height: 50%;
+                position: relative;
+                overflow: hidden;
+                mask: radial-gradient(circle at 250px 120px, transparent 110px, #fff 150px, #fff 100%);
+            }
+            
+            .danmakuSpan {
+                position: absolute;
+                color: #fff;
+                font-size: 24px;
+                opacity: .8;
+            }
+
+            @keyframes move {
+                100% {
+                    transform: translate(calc(85vw), 0);
+                }
+            }
+            
+            @for $i from 1 to 30 {
+                .danmakuSpan:nth-child(#{$i}) {
+                    color: rgb(255, 255, calc(#{$i} * 10));
+                    top: calc(#{$i % 10} * 18px);
+                    animation: move calc(#{$i * 0.2}s + 10s) infinite calc(#{$i * 2} * -1s) linear;
+                }
+            }
+        }
+        .active {
+            width: 500px;
+            height: 200px;
+            margin-top: 30px;
+            background: url(https://assets.2dfire.com/frontend/1fc2b003df64bdbb50501cc553124718.jpg) no-repeat;
+            background-size: 100%;
+
+            .danmakusContainer {
+                width: 100%;
+                height: 50%;
+                position: relative;
+                overflow: hidden;
+                mask: radial-gradient(circle at 50px 50px, transparent 30px, #fff 50px, #fff 100%);
+                animation: mask 10s infinite alternate;
+            }
+            
+            .danmakuSpan {
+                position: absolute;
+                color: #fff;
+                font-size: 24px;
+                opacity: .8;
+            }
+
+            @keyframes move {
+                100% {
+                    transform: translate(calc(85vw), 0);
+                }
+            }
+            
+            @for $i from 1 to 30 {
+                .danmakuSpan:nth-child(#{$i}) {
+                    color: rgb(255, 255, calc(#{$i} * 10));
+                    top: calc(#{$i % 10} * 8px);
+                    animation: move calc(#{$i * 0.2}s + 10s) infinite calc(#{$i * 2} * -1s) linear;
+                }
+            }
+
+            @keyframes mask {
+                100% {
+                    mask-position: 85vw 0;
+                }
+            }
+        }
+    }
+
+    .danmakuDesc {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url(https://assets.2dfire.com/frontend/82bb8ecf4d31882b79c9939ce7b1eee8.png) no-repeat center;
+        background-size: 93%;
+    }
+
+}
