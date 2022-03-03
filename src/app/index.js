@@ -9,6 +9,7 @@ import Hover from './components/hover'
 import threeDText from './components/3dText'
 import GradualText from './components/gradualText'
 import ThreeD from './components/threeD'
+import CanvasList from './components/canvasList'
 
 class App extends React.Component {
 
