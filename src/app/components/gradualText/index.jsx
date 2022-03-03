@@ -4,7 +4,7 @@ import style from './index.scss'
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
-const gradualText = () => {
+const GradualText = () => {
     const textArr = ['Lorem','ipsum','dolor','sit','amet','consectetur','adipisicing','elit.','Mollitia','nostrum', 'placeat','consequatur','deserunt','velit','ducimus','possimus','commodi','temporibus','debitis','quam.']
     return (
        <div className={style.gradualText}>
@@ -38,4 +38,4 @@ const gradualText = () => {
     )
 }
 
-export default withRouter(gradualText)
+export default withRouter(GradualText)

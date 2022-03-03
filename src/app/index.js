@@ -7,8 +7,8 @@ import WelCome from './components/welcome'
 import Coupon from './components/coupon'
 import Hover from './components/hover'
 import threeDText from './components/3dText'
-import gradualText from './components/gradualText'
-import threeD from './components/threeD'
+import GradualText from './components/gradualText'
+import ThreeD from './components/threeD'
 
 class App extends React.Component {
 
@@ -21,13 +21,13 @@ class App extends React.Component {
             >
                 <Header />
                 <Switch>
-                    <Route path='/' exact component={WelCome} />
-                    <Route path='/mask' exact component={Mask} />
-                    <Route path='/coupon' exact component={Coupon} />
-                    <Route path='/hover' exact component={Hover} />
-                    <Route path='/3dText' exact component={threeDText} />
-                    <Route path='/gradualText' exact component={gradualText} />
-                    <Route path='/threeD' exact component={threeD} />
+                    <Route path='/' exact component={() => <WelCome/>} />
+                    <Route path='/mask' exact component={() => <Mask/>} />
+                    <Route path='/coupon' exact component={()=> <Coupon/>} />
+                    <Route path='/hover' exact component={() => <Hover/>} />
+                    <Route path='/3dText' exact component={() => <threeDText/>} />
+                    <Route path='/gradualText' exact component={() => <GradualText/>} />
+                    {/* <Route path='/threeD' exact component={ThreeD} /> */}
                 </Switch>
             </div>
         )

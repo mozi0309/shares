@@ -51,18 +51,25 @@ const Header = ({ history }) => {
                                     Hover
                                 </a>
                             </Menu.Item>
-                            <Menu.Item>
+                            {/* <Menu.Item>
                                 <a onClick={() => {
                                     history.push('/threeD')
                                 }}>
                                     threeD
                                 </a>
-                            </Menu.Item>
+                            </Menu.Item> */}
                             <Menu.Item>
                                 <a onClick={() => {
                                     history.push('/gradualText')
                                 }}>
                                     gradualText
+                                </a>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <a onClick={() => {
+                                    history.push('/canvas')
+                                }}>
+                                    canvas
                                 </a>
                             </Menu.Item>
                         </Menu>

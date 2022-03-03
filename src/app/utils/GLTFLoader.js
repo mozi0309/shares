@@ -7,7 +7,8 @@
  * @author Don McCurdy / https://www.donmccurdy.com
  */
 
- import * as THREE from 'three'
+ import { typeOf } from 'react-is';
+import * as THREE from 'three'
 
 
 THREE.GLTFLoader = ( function () {
@@ -76,7 +77,7 @@ THREE.GLTFLoader = ( function () {
 
 				try {
 
-					scope.parse( data, resourcePath, function ( gltf ) {
+					scope.parse(data, resourcePath, function (gltf) {
 
 						onLoad( gltf );
 
@@ -122,7 +123,7 @@ THREE.GLTFLoader = ( function () {
 
 		},
 
-		parse: function ( data, path, onLoad, onError ) {
+		parse: function (data, path, onLoad, onError) {
 
 			var content;
 			var extensions = {};
@@ -133,7 +134,7 @@ THREE.GLTFLoader = ( function () {
 
 			} else {
 
-				var magic = THREE.LoaderUtils.decodeText( new Uint8Array( data, 0, 4 ) );
+				var magic = THREE.LoaderUtils.decodeText(new Uint8Array(data, 0, 4));
 
 				if ( magic === BINARY_EXTENSION_HEADER_MAGIC ) {
 
@@ -152,13 +153,12 @@ THREE.GLTFLoader = ( function () {
 
 				} else {
 
-					content = THREE.LoaderUtils.decodeText( new Uint8Array( data ) );
+					content = THREE.LoaderUtils.decodeText(new Uint8Array(data));
 
 				}
 
 			}
-
-			var json = JSON.parse( content );
+			var json = JSON.parse(JSON.stringify(content));
 
 			if ( json.asset === undefined || json.asset.version[ 0 ] < 2 ) {
 
@@ -210,7 +210,7 @@ THREE.GLTFLoader = ( function () {
 
 			}
 
-			var parser = new GLTFParser( json, extensions, {
+			var parser = new GLTFParser(json, extensions, {
 
 				path: path || this.resourcePath || '',
 				crossOrigin: this.crossOrigin,
@@ -468,7 +468,7 @@ THREE.GLTFLoader = ( function () {
 			if ( chunkType === BINARY_EXTENSION_CHUNK_TYPES.JSON ) {
 
 				var contentArray = new Uint8Array( data, BINARY_EXTENSION_HEADER_LENGTH + chunkIndex, chunkLength );
-				this.content = THREE.LoaderUtils.decodeText( contentArray );
+				this.content = THREE.LoaderUtils.decodeText(contentArray);
 
 			} else if ( chunkType === BINARY_EXTENSION_CHUNK_TYPES.BIN ) {
 

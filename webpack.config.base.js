@@ -12,7 +12,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      'src': path.resolve(__dirname, './src')
+      'src': path.resolve(__dirname, './src'),
+      '@three': path.join(__dirname, './node_modules/three/examples')
+
     }
   },
   module: {
