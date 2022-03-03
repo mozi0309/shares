@@ -4,22 +4,23 @@ import style from './index.scss'
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
-const cssMenu = (
-    <Menu>
-        <Menu.Item>
-            <a onClick={() => {
-                props.history.push('/mask')
-            }}>
-                Mask
-        </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-                Coupon
-        </a>
-        </Menu.Item>
-    </Menu>
-);
+// const cssMenu = (
+//     <Menu>
+//         <Menu.Item>
+//             <a onClick={() => {
+//                 props.history.push('/mask')
+//             }}>
+//                 Mask
+//         </a>
+//         </Menu.Item>
+//         <Menu.Item>
+//             <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+//                 Coupon
+//         </a>
+//         </Menu.Item>
+//     </Menu>
+// );
+
 
 const Header = ({ history }) => {
     return (
@@ -34,7 +35,7 @@ const Header = ({ history }) => {
                                     history.push('/mask')
                                 }}>
                                     Mask
-                        </a>
+                                </a>
                             </Menu.Item>
                             <Menu.Item>
                                 <a onClick={() => {

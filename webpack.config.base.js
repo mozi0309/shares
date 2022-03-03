@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    publicPath: './'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -25,7 +25,7 @@ module.exports = {
             options: {
               name: '[hash].[ext]',
               outputPath: 'assets/',
-              publicPath: '/assets/'
+              publicPath: './assets/'
             }
           }
         ]
@@ -50,10 +50,22 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:8]'
             }
           },
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // 将 var.scss 引入到每个 scss 文件，方便每个文件直接使用变量
+              resources: [
+                path.resolve(__dirname, './src/styles/func.scss')
+              ]
+
+            }
+          }
         ]
       },
       {
@@ -63,6 +75,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: true,
+              localIdentName: '[local]-[hash:base64:8]'
             }
           },
           'postcss-loader',

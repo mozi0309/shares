@@ -12,8 +12,4 @@
 - less
 - sass
 - axios
-- react-hot-loader(热更新)
-
-### 安装依赖
-> npm install
 
