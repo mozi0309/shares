@@ -65,13 +65,7 @@ const Header = ({ history }) => {
                                     gradualText
                                 </a>
                             </Menu.Item>
-                            <Menu.Item>
-                                <a onClick={() => {
-                                    history.push('/canvas')
-                                }}>
-                                    canvas
-                                </a>
-                            </Menu.Item>
+                
                         </Menu>
                     )}
                 >

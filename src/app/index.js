@@ -9,7 +9,6 @@ import Hover from './components/hover'
 import threeDText from './components/3dText'
 import GradualText from './components/gradualText'
 import ThreeD from './components/threeD'
-import CanvasList from './components/canvasList'
 
 class App extends React.Component {
 
@@ -28,7 +27,6 @@ class App extends React.Component {
                     <Route path='/hover' exact component={() => <Hover/>} />
                     <Route path='/3dText' exact component={() => <threeDText/>} />
                     <Route path='/gradualText' exact component={() => <GradualText/>} />
-                    <Route path='/canvas' exact component={() => <CanvasList/>} />
                     {/* <Route path='/threeD' exact component={ThreeD} /> */}
                 </Switch>
             </div>
